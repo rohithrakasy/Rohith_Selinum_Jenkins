@@ -17,6 +17,10 @@ public class BaseTest {
 
 	protected WebDriver driver;
 	protected Properties prop;
+	
+	public WebDriver getDriver() {
+		return driver;
+	}
 
 	@BeforeTest
 	public void setup() {

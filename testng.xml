@@ -2,15 +2,18 @@
 
 <suite name="OrangeHRM Suite">
 
-    <test name="Login Test">
+	<listeners>
+		<listener class-name="listners.TestListner"></listener>
+	</listeners>
 
-        <classes>
 
-            <class name="tests.LoginTest"/>
-           
+	<test name="Login Test">
 
-        </classes>
+		<classes>
 
-    </test>
+			<class name="tests.LoginTest" />
+		</classes>
+
+	</test>
 
 </suite>
