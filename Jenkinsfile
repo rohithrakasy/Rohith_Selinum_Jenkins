@@ -17,7 +17,7 @@ pipeline{
 		
 		stage('Verify Tools'){
 			steps{
-				bat 'java -v'
+				bat 'java -version'
 				bat 'mvn -version'
 			}
 		}
