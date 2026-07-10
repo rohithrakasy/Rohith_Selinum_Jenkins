@@ -3,6 +3,7 @@ package base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import driver.DriverFactory;
 import utils.WaitUtils;
 
 public class BasePage {
@@ -10,8 +11,8 @@ public class BasePage {
 	protected WebDriver driver;
 	protected WaitUtils waitUtils;
 	
-	public BasePage(WebDriver driver) {
-		this.driver = driver;
+	public BasePage() {
+		this.driver = DriverFactory.getDriver();
 		this.waitUtils = new WaitUtils(driver);
 	}
 	

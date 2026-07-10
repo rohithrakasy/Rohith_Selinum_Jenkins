@@ -10,32 +10,51 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
+	
+	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
 	public static WebDriver initializeDriver(String browser) {
 
-		WebDriver driver;
+//		WebDriver driver;
+		
 
 		switch (browser.toLowerCase()) {
 
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver.set(new ChromeDriver());;
 			break;
 		case "firefox":
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			driver.set(new FirefoxDriver());
 			break;
 
 		case "edge":
 			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
+			driver.set(new EdgeDriver());
 			break;
 
 		default:
 			throw new RuntimeErrorException(null, "Invalid browser Name: " + browser);
 		}
 
-		return driver;
+		return driver.get();
 	}
+	
+	public static WebDriver getDriver() {
+		
+		return driver.get();
+	}
+	
+	public static void quitDriver() {
+		
+		if(driver.get() != null) {
+			driver.get().quit();
+			driver.remove();
+		}
+	}
+	
+	
+	
 
 }
