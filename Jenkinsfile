@@ -1,6 +1,14 @@
 pipeline{
 	agent any
 	
+	parameters{
+		choice(
+			name: 'BROWSER',
+			choices:['chrome','firefox','edge']
+			description: 'Select the browser for test execution'
+		)
+	}
+	
 	
 	tools{
 		jdk 'JDK21'
@@ -24,7 +32,7 @@ pipeline{
 		
 		stage('Run Selenium Tests'){
 			steps{
-				bat 'mvn clean test'
+				bat "mvn clean test -Dbrowser=${params.BROWSER}"
 			}
 		}
 	}

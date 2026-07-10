@@ -30,8 +30,10 @@ public class BaseTest {
 //		WebDriverManager.chromedriver().setup();
 //		Replace these steps by driver Factory class
 //		driver = new ChromeDriver();
+		
+		String browser = System.getProperty("browser",prop.getProperty("browser"));
 
-		DriverFactory.initializeDriver(prop.getProperty("browser"));
+		DriverFactory.initializeDriver(browser);
 
 		DriverFactory.getDriver().manage().window().maximize();
 
