@@ -8,8 +8,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
 import base.BaseTest;
-import reports.extent.ExtentReportManager;
-import reports.extent.ExtentTestManager;
+import reportsExtent.ExtentReportManager;
+import reportsExtent.ExtentTestManager;
 import utils.ScreenshotUtils;
 
 public class TestListener implements ITestListener {
