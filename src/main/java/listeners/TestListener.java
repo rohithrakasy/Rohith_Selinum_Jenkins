@@ -25,7 +25,6 @@ public class TestListener implements ITestListener {
 		ExtentTestManager.setTest(test);
 
 		test.info("Test started: " + result.getName());
-
 //		System.out.println("Test started: "+ result.getName());
 	}
 
