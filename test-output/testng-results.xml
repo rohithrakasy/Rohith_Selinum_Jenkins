@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-09T19:52:06 MST" name="OrangeHRM Suite" finished-at="2026-07-09T19:52:12 MST" duration-ms="5993">
+  <suite started-at="2026-07-09T20:22:13 MST" name="OrangeHRM Suite" finished-at="2026-07-09T20:22:20 MST" duration-ms="6740">
     <groups>
     </groups>
-    <test started-at="2026-07-09T19:52:06 MST" name="Login Test" finished-at="2026-07-09T19:52:12 MST" duration-ms="5993">
+    <test started-at="2026-07-09T20:22:13 MST" name="Login Test for Orange Hrm Portal" finished-at="2026-07-09T20:22:20 MST" duration-ms="6740">
       <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@7098b907]" started-at="2026-07-09T19:52:06 MST" name="setup" finished-at="2026-07-09T19:52:08 MST" duration-ms="2121" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@503f91c3]" started-at="2026-07-09T20:22:13 MST" name="setup" finished-at="2026-07-09T20:22:16 MST" duration-ms="2746" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginOrageHrmtest()[pri:0, instance:tests.LoginTest@7098b907]" started-at="2026-07-09T19:52:08 MST" name="loginOrageHrmtest" finished-at="2026-07-09T19:52:12 MST" duration-ms="3291" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@503f91c3]" started-at="2026-07-09T20:22:13 MST" name="setup" finished-at="2026-07-09T20:22:16 MST" duration-ms="2975" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginPageTitle()[pri:0, instance:tests.LoginTest@503f91c3]" started-at="2026-07-09T20:22:16 MST" name="verifyLoginPageTitle" finished-at="2026-07-09T20:22:17 MST" duration-ms="1434" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginPageTitle -->
+        <test-method signature="loginOrageHrmtest()[pri:0, instance:tests.LoginTest@503f91c3]" started-at="2026-07-09T20:22:16 MST" name="loginOrageHrmtest" finished-at="2026-07-09T20:22:20 MST" duration-ms="3433" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginOrageHrmtest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@7098b907]" started-at="2026-07-09T19:52:12 MST" name="teardown" finished-at="2026-07-09T19:52:12 MST" duration-ms="557" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@503f91c3]" started-at="2026-07-09T20:22:17 MST" name="teardown" finished-at="2026-07-09T20:22:18 MST" duration-ms="297" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@503f91c3]" started-at="2026-07-09T20:22:20 MST" name="teardown" finished-at="2026-07-09T20:22:20 MST" duration-ms="303" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- tests.LoginTest -->
-    </test> <!-- Login Test -->
+    </test> <!-- Login Test for Orange Hrm Portal -->
   </suite> <!-- OrangeHRM Suite -->
 </testng-results>

@@ -1,4 +1,4 @@
-package listners;
+package listeners;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -9,17 +9,20 @@ import com.aventstack.extentreports.ExtentTest;
 
 import base.BaseTest;
 import reports.ExtentReportManager;
+import reports.ExtentTestManager;
 import utils.ScreenshotUtils;
 
-public class TestListner implements ITestListener {
+public class TestListener implements ITestListener {
 
 	ExtentReports extent = ExtentReportManager.getReportInstance();
-	ExtentTest test;
+	
 
 	@Override
 	public void onTestStart(ITestResult result) {
 
-		test = extent.createTest(result.getName());
+		ExtentTest test = extent.createTest(result.getName());
+		
+		ExtentTestManager.setTest(test);
 
 		test.info("Test started: " + result.getName());
 
@@ -29,8 +32,9 @@ public class TestListner implements ITestListener {
 	@Override
 	public void onTestSuccess(ITestResult result) {
 
-		test = extent.createTest(result.getName());
-		test.pass("Test Passed: " + result.getName());
+//		ExtentTest test = extent.createTest(result.getName());
+		
+		ExtentTestManager.getTest().pass("Test Passed: " + result.getName());
 
 //		System.out.println("Test Passed: "+ result.getName());
 	}
@@ -38,21 +42,32 @@ public class TestListner implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 
-		test.fail("Test Failed: " + result.getName());
+		ExtentTestManager.getTest().fail("Test Failed: " + result.getName());
 
-		test.fail(result.getThrowable());
+		ExtentTestManager.getTest().fail(result.getThrowable());
 //		System.out.println("Test Failed: "+ result.getName());
 
 //		BaseTest basetest = (BaseTest) result.getInstance();
 
 		String screenshotPath = ScreenshotUtils.captureScreenshot(result.getName());
 
-		test.addScreenCaptureFromPath(screenshotPath);
+		ExtentTestManager.getTest().addScreenCaptureFromPath(screenshotPath);
+		
+		ExtentTestManager.unload();
 
 //		System.out.println("Screenshot Captured: "+ screenshotPath);
 
 	}
 
+	@Override
+	public void onTestSkipped(ITestResult result) {
+
+	    ExtentTestManager.getTest()
+	            .skip("Test Skipped: " + result.getName());
+
+	    ExtentTestManager.unload();
+	}
+	
 	@Override
 	public void onFinish(ITestContext context) {
 
