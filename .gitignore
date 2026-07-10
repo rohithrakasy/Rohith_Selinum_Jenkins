@@ -23,20 +23,7 @@
 hs_err_pid*
 replay_pid*
 
+config.properties
 
-# Test reports
-test-output/
-extent-report/
-
-# Screenshots
-screenshots/
-
-# Logs
-*.log
-
-# VS Code
-.vscode/
-
-# IntelliJ
-.idea/
-*.iml
+reports
+screenshots

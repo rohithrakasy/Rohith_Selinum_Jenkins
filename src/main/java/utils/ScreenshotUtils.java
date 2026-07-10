@@ -9,11 +9,15 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+import driver.DriverFactory;
+
 import java.nio.file.Files;
 
 public class ScreenshotUtils {
 	
-	public static String captureScreenshot(WebDriver driver,String testName) {
+	public static String captureScreenshot(String testName) {
+		
+		WebDriver driver = DriverFactory.getDriver();
 		
 		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmsss").format(new Date());
 		

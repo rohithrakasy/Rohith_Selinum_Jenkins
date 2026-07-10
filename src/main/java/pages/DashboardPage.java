@@ -12,8 +12,8 @@ public class DashboardPage extends BasePage {
 
 	private By headerText = By.xpath("//h6[text()='Dashboard']");
 
-	public DashboardPage(WebDriver driver) {
-		super(driver);
+	public DashboardPage() {
+		super();
 	}
 
 	public boolean isDashboardDisplayed() {

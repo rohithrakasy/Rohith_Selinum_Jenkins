@@ -7,6 +7,7 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import driver.DriverFactory;
@@ -15,34 +16,34 @@ import utils.ConfigReader;
 
 public class BaseTest {
 
-	protected WebDriver driver;
+//	protected WebDriver driver;
 	protected Properties prop;
-	
-	public WebDriver getDriver() {
-		return driver;
-	}
 
-	@BeforeTest
+//	public WebDriver getDriver() {
+//		return driver;
+//	}
+
+	@BeforeMethod
 	public void setup() {
-		
+
 		prop = ConfigReader.getProperties();
 //		WebDriverManager.chromedriver().setup();
 //		Replace these steps by driver Factory class
 //		driver = new ChromeDriver();
-		
-		driver= DriverFactory.initializeDriver(prop.getProperty("browser"));
 
-		driver.manage().window().maximize();
+		DriverFactory.initializeDriver(prop.getProperty("browser"));
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		DriverFactory.getDriver().manage().window().maximize();
 
-		driver.get(prop.getProperty("url"));
+		DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+		DriverFactory.getDriver().get(prop.getProperty("url"));
 	}
 
 	@AfterMethod
 	public void teardown() {
-		if (driver != null) {
-			driver.quit();
+		if (DriverFactory.getDriver() != null) {
+			DriverFactory.quitDriver();
 		}
 	}
 

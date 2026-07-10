@@ -18,14 +18,14 @@ public class LoginTest extends BaseTest{
 		
 		
 		
-		LoginPage loginpage= new LoginPage(driver);
-		DashboardPage dashboardPage = new DashboardPage(driver);
+		LoginPage loginpage= new LoginPage();
+		DashboardPage dashboardPage = new DashboardPage();
 		
 		
 //		loginpage.login("Admin", "admin123");
 		
 		loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
-		ScreenshotUtils.captureScreenshot(driver, "Login_Test");
+		ScreenshotUtils.captureScreenshot("Login_Test");
 		Assert.assertTrue(dashboardPage.isDashboardDisplayed(),"Dashboard page is not displayed");
 //		Assert.assertTrue(false,"Dashboard page is not displayed");
 	}
