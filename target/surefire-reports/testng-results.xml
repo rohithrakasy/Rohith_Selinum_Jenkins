@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-09T20:51:11 MST" name="Surefire suite" finished-at="2026-07-09T20:51:28 MST" duration-ms="17188">
+  <suite started-at="2026-07-09T21:04:35 MST" name="Surefire suite" finished-at="2026-07-09T21:04:50 MST" duration-ms="15440">
     <groups>
     </groups>
-    <test started-at="2026-07-09T20:51:11 MST" name="Surefire test" finished-at="2026-07-09T20:51:28 MST" duration-ms="17188">
+    <test started-at="2026-07-09T21:04:35 MST" name="Surefire test" finished-at="2026-07-09T21:04:50 MST" duration-ms="15440">
       <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T20:51:11 MST" name="setup" finished-at="2026-07-09T20:51:20 MST" duration-ms="8505" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T21:04:35 MST" name="setup" finished-at="2026-07-09T21:04:38 MST" duration-ms="3377" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginOrageHrmtest()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T20:51:20 MST" name="loginOrageHrmtest" finished-at="2026-07-09T20:51:22 MST" duration-ms="2586" status="PASS">
+        <test-method signature="loginOrageHrmtest()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T21:04:38 MST" name="loginOrageHrmtest" finished-at="2026-07-09T21:04:44 MST" duration-ms="6192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginOrageHrmtest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T20:51:22 MST" name="teardown" finished-at="2026-07-09T20:51:23 MST" duration-ms="723" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T21:04:44 MST" name="teardown" finished-at="2026-07-09T21:04:45 MST" duration-ms="615" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T20:51:23 MST" name="setup" finished-at="2026-07-09T20:51:28 MST" duration-ms="4817" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T21:04:45 MST" name="setup" finished-at="2026-07-09T21:04:47 MST" duration-ms="2317" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLoginPageTitle()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T20:51:28 MST" name="verifyLoginPageTitle" finished-at="2026-07-09T20:51:28 MST" duration-ms="18" status="PASS">
+        <test-method signature="verifyLoginPageTitle()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T21:04:47 MST" name="verifyLoginPageTitle" finished-at="2026-07-09T21:04:50 MST" duration-ms="2307" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginPageTitle -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T20:51:28 MST" name="teardown" finished-at="2026-07-09T20:51:28 MST" duration-ms="457" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@2bbf180e]" started-at="2026-07-09T21:04:50 MST" name="teardown" finished-at="2026-07-09T21:04:50 MST" duration-ms="573" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

@@ -3,7 +3,7 @@
 <suite name="OrangeHRM Suite" parallel="methods" thread-count="2">
 
 	<listeners>
-		<listener class-name="listners.TestListner"></listener>
+		<listener class-name="listeners.TestListener"></listener>
 	</listeners>
 
 
