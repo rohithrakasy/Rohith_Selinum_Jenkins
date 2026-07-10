@@ -156,7 +156,7 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;OrangeHRM Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;listners.TestListner&quot;/&gt;
+    &lt;listener class-name=&quot;listeners.TestListener&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;Login Test for Orange Hrm Portal&quot;&gt;
     &lt;classes&gt;
@@ -204,11 +204,11 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginOrageHrmtest')
 data.setCell(0, 2, 'tests.LoginTest')
-data.setCell(0, 3, 3433);
+data.setCell(0, 3, 4656);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'verifyLoginPageTitle')
 data.setCell(1, 2, 'tests.LoginTest')
-data.setCell(1, 3, 1434);
+data.setCell(1, 3, 37);
 window.suiteTableData['OrangeHRM_Suite']= { tableData: data, tableDiv: 'times-div-OrangeHRM_Suite'}
 return data;
 }
@@ -249,20 +249,20 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyLoginPageTitle</span>
-                <span class="method-start">2747 ms</span>
+                <span class="method-name">loginOrageHrmtest</span>
+                <span class="method-start">4430 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">loginOrageHrmtest</span>
-                <span class="method-start">2975 ms</span>
+                <span class="method-name">verifyLoginPageTitle</span>
+                <span class="method-start">6296 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">4184 ms</span>
+                <span class="method-start">6362 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">6410 ms</span>
+                <span class="method-start">9089 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
