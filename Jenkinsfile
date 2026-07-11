@@ -1,6 +1,14 @@
 pipeline{
 	agent any
 	
+	parameters{
+		choice(
+			name: 'BROWSER',
+			choices:['chrome','firefox','edge'],
+			description: 'Select the browser for test execution'
+		)
+	}
+	
 	
 	tools{
 		jdk 'JDK21'
@@ -17,34 +25,42 @@ pipeline{
 		
 		stage('Verify Tools'){
 			steps{
-				bat 'java -v'
+				bat 'java -version'
 				bat 'mvn -version'
 			}
 		}
 		
 		stage('Run Selenium Tests'){
 			steps{
-				bat 'mvn clean test'
+				bat "mvn clean test -Dbrowser=${params.BROWSER}"
 			}
 		}
 	}
 	
-	post{
-		
-		always{
-			junit testResults: 'target/surefire-reports/*.xml',
-                  allowEmptyResults: true
+	post {
+    always {
+        junit testResults: 'target/surefire-reports/*.xml',
+              allowEmptyResults: true
 
-            archiveArtifacts artifacts: 'reports/**/*.html, screenshots/**/*.png',
-                             allowEmptyArchive: true
-		}
-		
-		success {
-            echo 'OrangeHRM automation tests passed.'
-        }
+        archiveArtifacts artifacts: 'reports/**/*.html, screenshots/**/*.png',
+                         allowEmptyArchive: true
 
-        failure {
-            echo 'OrangeHRM automation tests failed. Review the console log and archived artifacts.'
-        }
-	}
+        publishHTML([
+            allowMissing: true,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: 'reports',
+            reportFiles: '*.html',
+            reportName: 'Extent Report'
+        ])
+    }
+
+    success {
+        echo "OrangeHRM tests passed on ${params.BROWSER}."
+    }
+
+    failure {
+        echo "OrangeHRM tests failed on ${params.BROWSER}."
+    }
+}
 }
