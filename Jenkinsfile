@@ -37,22 +37,30 @@ pipeline{
 		}
 	}
 	
-	post{
-		
-		always{
-			junit testResults: 'target/surefire-reports/*.xml',
-                  allowEmptyResults: true
+	post {
+    always {
+        junit testResults: 'target/surefire-reports/*.xml',
+              allowEmptyResults: true
 
-            archiveArtifacts artifacts: 'reports/**/*.html, screenshots/**/*.png',
-                             allowEmptyArchive: true
-		}
-		
-		success {
-            echo 'OrangeHRM automation tests passed.'
-        }
+        archiveArtifacts artifacts: 'reports/**/*.html, screenshots/**/*.png',
+                         allowEmptyArchive: true
 
-        failure {
-            echo 'OrangeHRM automation tests failed. Review the console log and archived artifacts.'
-        }
-	}
+        publishHTML([
+            allowMissing: true,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: 'reports',
+            reportFiles: '*.html',
+            reportName: 'Extent Report'
+        ])
+    }
+
+    success {
+        echo "OrangeHRM tests passed on ${params.BROWSER}."
+    }
+
+    failure {
+        echo "OrangeHRM tests failed on ${params.BROWSER}."
+    }
+}
 }
